@@ -13,56 +13,56 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleGoogleLogin = async () => {
-    setError("");
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      const idToken = await user.getIdToken();
+  // const handleGoogleLogin = async () => {
+  //   setError("");
+  //   try {
+  //     const provider = new GoogleAuthProvider();
+  //     const result = await signInWithPopup(auth, provider);
+  //     const user = result.user;
+  //     const idToken = await user.getIdToken();
 
-      const response = await fetch("http://localhost:3000/user/google-login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ token: idToken })
-      });
+  //     const response = await fetch("http://localhost:3000/user/google-login", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       credentials: "include",
+  //       body: JSON.stringify({ token: idToken })
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (response.ok) {
-        sessionStorage.setItem("current-user", JSON.stringify({
-          email: data.user.email,
-          username: data.user.username,
-          role: data.user.role
-        }));
-        localStorage.setItem("token", data.token);
+  //     if (response.ok) {
+  //       sessionStorage.setItem("current-user", JSON.stringify({
+  //         email: data.user.email,
+  //         username: data.user.username,
+  //         role: data.user.role
+  //       }));
+  //       localStorage.setItem("token", data.token);
 
-        if (data.user.role === "admin") {
-          navigate("/admin-dashboard");
-        } else if (data.user.role === "user") {
-          if (data.firstTime) {
-            navigate("/welcome");
-          } else if (data.profileComplete) {
-            navigate("/dashboard");
-          } else {
-            navigate("/profile-setup", {
-              state: { email: data.user.email, token: data.token }
-            });
-          }
-        } else {
-          setError("Unknown role detected.");
-        }
+  //       if (data.user.role === "admin") {
+  //         navigate("/admin-dashboard");
+  //       } else if (data.user.role === "user") {
+  //         if (data.firstTime) {
+  //           navigate("/welcome");
+  //         } else if (data.profileComplete) {
+  //           navigate("/dashboard");
+  //         } else {
+  //           navigate("/profile-setup", {
+  //             state: { email: data.user.email, token: data.token }
+  //           });
+  //         }
+  //       } else {
+  //         setError("Unknown role detected.");
+  //       }
 
-      } else {
-        setError(data.error || "Google login failed.");
-      }
+  //     } else {
+  //       setError(data.error || "Google login failed.");
+  //     }
 
-    } catch (error) {
-      console.error("Google login error:", error);
-      setError("Google login failed. Please try again.");
-    }
-  };
+  //   } catch (error) {
+  //     console.error("Google login error:", error);
+  //     setError("Google login failed. Please try again.");
+  //   }
+  // };
 
 
 
@@ -135,7 +135,7 @@ function SignIn() {
           display: 'flex',
           maxWidth: '750px',
           width: '100%',
-          height: '520px',
+          height: '450px',
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
           borderRadius: '15px',
           overflow: 'hidden',
@@ -250,7 +250,7 @@ function SignIn() {
                 Sign In
               </button>
 
-              <div style={{ margin: '8px 0', textAlign: 'center' }}>
+              {/*<div style={{ margin: '8px 0', textAlign: 'center' }}>
                 <hr style={{ margin: '10px 0' }} />
                 <span style={{ fontSize: '13px', color: '#888' }}>or</span>
               </div>
@@ -279,7 +279,7 @@ function SignIn() {
                   style={{ width: '18px', height: '18px' }}
                 />
                 Sign in with Google
-              </button>
+              </button>*/}
             </form>
 
             <p style={{
