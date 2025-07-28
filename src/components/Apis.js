@@ -1,4 +1,4 @@
-const BASE_URL = "https://healthy-backend.onrender.com";
+const BASE_URL = "https://healthybitesbackend.onrender.com";
 
 export default {
   SIGN_UP: `${BASE_URL}/user/sign-up`,
