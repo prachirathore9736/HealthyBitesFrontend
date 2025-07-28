@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UserHeader from './UserHeader';
+import Apis from './Apis';
 
 const UserProfile = () => {
     const [user, setUser] = useState(null);
@@ -32,7 +33,7 @@ const UserProfile = () => {
                     return;
                 }
 
-                const response = await axios.get("http://localhost:3000/user/profile", {
+                const response = await axios.get(Apis.GET_PROFILE, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
 
@@ -111,7 +112,7 @@ const UserProfile = () => {
                 }
             };
 
-            await axios.post("http://localhost:3000/user/profile", updatedData, {
+            await axios.post(Apis.UPDATE_PROFILE, updatedData, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 

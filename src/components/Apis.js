@@ -1,4 +1,4 @@
-const BASE_URL = "https://healthybitesbackend.onrender.com";
+const BASE_URL = "https://healthy-backend.onrender.com";
 
 export default {
   SIGN_UP: `${BASE_URL}/user/sign-up`,
@@ -8,8 +8,7 @@ export default {
   RESET_PASSWORD: `${BASE_URL}/user/forgot-password`,
   SET_PREFERENCES: `${BASE_URL}/user/setPreferences`,
   LOGOUT: `${BASE_URL}/user/logout`,
-  UPDATE_PREFERENCES: `${BASE_URL}/user/update-user-preferences/:email`,
   GET_PROFILE: `${BASE_URL}/user/profile`,
   UPDATE_PROFILE: `${BASE_URL}/user/update-profile`,
   GENERATE_MEAL_PLAN: `${BASE_URL}/user/generate-meal-plan`,
-};
+}

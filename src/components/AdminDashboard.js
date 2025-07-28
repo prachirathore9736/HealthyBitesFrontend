@@ -14,7 +14,7 @@ const AdminDashboard = () => {
     imageUrl: ''
   });
 
-  const API_URL = 'http://localhost:3000/admin/meals';
+  const API_URL = 'https://healthy-backend.onrender.com/admin/meals';
 
   const getAuthHeaders = () => {
     const token = localStorage.getItem('token');
