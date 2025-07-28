@@ -3,8 +3,11 @@ import lunchImg from './images/lunch.png';
 import dinnerImg from './images/dinner.png';
 import Header from './Header';
 import './Meal.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function Meal() {
+  const navigate = useNavigate();
   return (
     <div className="explore-container">
       <Header />
@@ -80,8 +83,10 @@ function Meal() {
             </div>
           </div>
         </div>
+        <button className="next-btn" onClick={() => navigate('/lockedpage')}>
+          Get Your Personalized Plan
+        </button>
 
-        <a href="/lockedpage" className="next-btn">Get Your Personalized Plan</a>
       </div>
 
       <div className="testimonials">

@@ -20,7 +20,7 @@ function App() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/forgot-password" element={<ResetPassword />} />
       <Route path="/meal" element={<Meal />} />
-      <Route path="/lockedpage" element={<LockedPage />} />
+      <Route path="/lockedpage" element={<LockedPage/>} />
       <Route path="/verify-otp" element={<VerifyOTP />} />
       <Route path="/profile-setup" element={<ProfileSetup />} />
       <Route path="/welcome" element={<Welcome />} />
