@@ -1,13 +1,15 @@
+const BASE_URL = "https://healthybitesbackend.onrender.com";
+
 export default {
-    SIGN_UP: "http://localhost:3000/user/sign-up",
-    SIGN_IN: "http://localhost:3000/user/sign-in",
-    VERIFY_OTP: "http://localhost:3000/user/verify-otp",
-    RESEND_OTP: "http://localhost:3000/user/resend-otp",
-    RESET_PASSWORD: "http://localhost:3000/user/forgot-password",
-    SET_PREFERENCES: "http://localhost:3000/user/setPreferences",
-    LOGOUT: "http://localhost:3000/user/logout",
-    UPDATE_PREFERENCES: "http://localhost:3000/user/update-user-preferences/:email",
-    GET_PROFILE: `http://localhost:3000/user/profile`,
-    UPDATE_PROFILE: `http://localhost:3000/user/update-profile`,
-    GENERATE_MEAL_PLAN: "http://localhost:3000/user/generate-meal-plan",
-}
+  SIGN_UP: `${BASE_URL}/user/sign-up`,
+  SIGN_IN: `${BASE_URL}/user/sign-in`,
+  VERIFY_OTP: `${BASE_URL}/user/verify-otp`,
+  RESEND_OTP: `${BASE_URL}/user/resend-otp`,
+  RESET_PASSWORD: `${BASE_URL}/user/forgot-password`,
+  SET_PREFERENCES: `${BASE_URL}/user/setPreferences`,
+  LOGOUT: `${BASE_URL}/user/logout`,
+  UPDATE_PREFERENCES: `${BASE_URL}/user/update-user-preferences/:email`,
+  GET_PROFILE: `${BASE_URL}/user/profile`,
+  UPDATE_PROFILE: `${BASE_URL}/user/update-profile`,
+  GENERATE_MEAL_PLAN: `${BASE_URL}/user/generate-meal-plan`,
+};
