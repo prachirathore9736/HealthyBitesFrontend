@@ -142,7 +142,7 @@ const UserProfile = () => {
     }
 
     const dietOptions = ['Vegan', 'Vegetarian', 'Keto', 'Paleo', 'No Restrictions', 'Mediterranean'];
-    const allergyOptions = ['Gluten', 'Peanut', 'Eggs', 'Fish', 'Soy', 'Shellfish', 'Tree Nuts'];
+    const allergyOptions = ['Gluten', 'Peanut', 'Eggs', 'Fish', 'Soy', 'Shellfish', 'TreeNuts'];
     const bodyFatOptions = ['Low', 'Medium', 'High'];
     const goalOptions = [{ value: 'Weight Loss', label: 'Weight Loss' }, { value: 'Gain', label: 'Gain Muscle' }, { value: 'Maintain', label: 'Maintain Weight' }];
     const mealOptions = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
