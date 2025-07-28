@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
-import foodImage from './images/dish1.png'; 
+import foodImage from './images/dish1.png';
 import Apis from './Apis';
 
 function SignUp() {
@@ -54,7 +54,7 @@ function SignUp() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '100px 20px 40px 20px', 
+        padding: '100px 20px 40px 20px',
         boxSizing: 'border-box'
       }}>
         {isLoading ? (
@@ -65,13 +65,13 @@ function SignUp() {
         ) : (
           <div style={{
             display: 'flex',
-            flexWrap: 'wrap', 
+            flexWrap: 'wrap',
             backgroundColor: '#ffffff',
             borderRadius: '15px',
             overflow: 'hidden',
             boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
             width: '100%',
-            maxWidth: '850px' 
+            maxWidth: '850px'
           }}>
 
             <div style={{
@@ -109,7 +109,7 @@ function SignUp() {
                 <button type="submit" disabled={isLoading} style={{ width: '100%', padding: '14px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontSize: '16px', opacity: isLoading ? 0.7 : 1 }}>
                   {isLoading ? 'Creating Account...' : 'Create Account'}
                 </button>
-                <p style={{ marginLeft: "50px" }}>Already have an Account?{' '}<a href="/sign-in" style={{ color: '#4CAF50', fontWeight: '400' }}>Sign-In</a></p>
+                <p style={{ marginLeft: "50px" }}>Already have an Account?{' '}<span onClick={() => navigate('/sign-in')}style={{ color: '#4CAF50', fontWeight: '400', cursor: 'pointer', textDecoration: 'underline' }}>Sign-In</span></p>
               </form>
             </div>
             <div style={{
