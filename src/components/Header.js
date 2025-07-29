@@ -2,20 +2,19 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 
 function Header() {
-  return <>
-    <header className="header">
-      <div className="logo">
-        <img src="logo.png" alt="Logo" />
+  return (
+    <header className="main-header">
+      <div className="header-left">
+        <img src="logo.png" alt="App Logo" className="logo-img" />
       </div>
-      <div className="meal-block">
-        <Link className="meal-item" to="/meal">Explore</Link>
-      </div>
-      <div className='auth-buttons'>
-        <Link className="sign-btn" to="/sign-up">Sign Up</Link>
-        <Link className="sign-btn" to="/sign-in">Sign In</Link>
-      </div>
+
+      <nav className="header-right">
+        <Link to="/meal" className="explore-link">Explore</Link>
+        <Link to="/sign-up" className="auth-btn">Sign Up</Link>
+        <Link to="/sign-in" className="auth-btn">Sign In</Link>
+      </nav>
     </header>
-  </>
+  );
 }
 
 export default Header;
