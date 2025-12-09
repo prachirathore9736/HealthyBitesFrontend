@@ -35,6 +35,7 @@ function SignUp() {
     setServerError("");
     try {
       const response = await axios.post(Apis.SIGN_UP, { username, password, email, contact: Number(contact) });
+      console.log("Response from backend:", response);
       if (response.data?.userDetail?._id) {
         navigate("/verify-otp", { state: { email, username } });
       } else {
