@@ -41,6 +41,7 @@ function SignUp() {
         setServerError("An unexpected error occurred. Please try again.");
       }
     } catch (err) {
+      console.log(err); 
       setServerError(err.response?.data?.message || "Sign up failed. Please try again.");
     } finally {
       setIsLoading(false);
