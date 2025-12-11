@@ -34,7 +34,12 @@ function SignUp() {
     setIsLoading(true);
     setServerError("");
     try {
-      const response = await axios.post(Apis.SIGN_UP, { username, password, email, contact: Number(contact) });
+      // const response = await axios.post(Apis.SIGN_UP, { username, email, password, contact: Number(contact) });
+      const response = await axios.post(
+    Apis.SIGN_UP, 
+    { username, email, password, contact: Number(contact) },
+    { withCredentials: true } // <--- This is the fix
+);
       console.log("Response from backend:", response);
       if (response.data?.userDetail?._id) {
         navigate("/verify-otp", { state: { email, username } });
